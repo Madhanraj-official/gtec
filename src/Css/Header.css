@@ -1,0 +1,98 @@
+.Hearder{
+    position: relative; 
+    background: #2da5f5;
+    height: 500px;
+    width: 100%;
+    & >a> img{
+        width: 100px;
+        padding: 10px;
+        margin-top: 30px;
+        margin-left: 100px;
+    }
+    & > h1{
+        color: white;
+        text-align: center;
+        font-size: 4rem;
+    }
+    & > .container{
+        width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 50px;
+        right: 5%;
+        & >nav{
+            
+            & > a{
+                color: black;
+                margin-left: 40px;
+
+                font-weight: bold;
+            }
+        }
+    }
+    & .whatsapp{
+        background: #10a760;
+        height: 60px;
+        width: 60px;
+        padding: 5px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 10px;
+        bottom: 80px;
+        & > img{
+            width: 40px;
+            width: 40px;
+        }
+    }
+    & .call{
+        background: #1b30aa;
+        height: 60px;
+        width: 60px;
+        padding: 5px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        & >  img{
+            width: 40px;
+            width: 40px;
+        }
+    }
+    & .contact{
+        position: absolute;
+        right: 0;
+    }
+}
+.phno{
+    
+    color :rgb(0, 102, 255);
+    padding: 0 10px 0 0px;
+    & > img{
+        padding: 0 5px;
+    }
+}
+.Enquiry_btn {
+    padding: 20px 30px;
+    font-size: large;
+    border-radius: 10px 10px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background: #008cff;
+      position: fixed;
+      top: 45%;
+      right: -70px;
+      transform: rotate(-90deg);
+      
+      
+  }
+  

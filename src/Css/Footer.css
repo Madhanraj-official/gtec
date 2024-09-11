@@ -1,0 +1,48 @@
+.left {
+  background: rgb(29, 29, 29);
+  display: flex;
+  width: 50%;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    & > .address {
+      color: #fff;
+      & > img {
+        padding: 0 20px 0 10px;
+      }
+    }
+    & > div {
+      display: flex;
+      margin: 10px;
+      background: #000;
+      & > .call {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        & > img {
+            width: 30px;
+            height: 30px;
+        }
+        & > a {
+          color: #fff;
+        }
+      }
+    }
+  }
+  & > .mainlink {
+    margin-left: 25%;
+    margin-top: 7%;
+    & > h3 {
+      color: #009dec;
+    }
+    & > nav {
+      display: flex;
+      flex-direction: column;
+
+      & > a {
+        color: #fff;
+        margin: 2px;
+      }
+    }
+  }
+}

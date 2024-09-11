@@ -1,0 +1,76 @@
+
+.enquiry {
+  display: flex;
+  width: 800px;
+  height: 400px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+  border-radius: 10px;
+  & > .leftwrap {
+    width: 50%;
+    background: #008cff;
+    border-radius: 10px 0 0 10px;
+  }
+
+  & form {
+    width: 100%;
+    height: 100%;
+
+    & > .rightwrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & .txtbox {
+        padding: 10px;
+        margin: 10px;
+        width: 70%;
+        border-bottom: 2px solid gray;
+
+        &:focus {
+          border-bottom: 2px solid rgb(0, 132, 255);
+          outline: none;
+        }
+      }
+      & > select {
+        width: 74%;
+        padding: 10px;
+        margin: 10px;
+        border-bottom: 2px solid gray;
+
+        &:focus {
+          border-bottom: 2px solid #008cff;
+          outline: none;
+        }
+        & > option {
+          color: #008cff;
+        }
+      }
+
+      & textarea {
+        padding: 10px;
+        resize: none;
+        height: auto;
+        width: 70%;
+        border-bottom: 2px solid gray;
+        margin: 10px;
+        &:focus {
+          border-bottom: 2px solid #008cff;
+          outline: none;
+        }
+      }
+      & .send-btn {
+        padding: 15px 20px;
+        margin: 10px;
+        background-color: #008cff;
+        border-radius: 10px;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      }
+    }
+  }
+}
