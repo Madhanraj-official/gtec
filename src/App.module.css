@@ -1,0 +1,54 @@
+
+  .img {
+    max-width: 400px;
+    height: 10rem;
+    padding: 0 15px;
+    object-fit: cover;
+  }
+  
+  .img:last-of-type {
+    padding-left: 0;
+  }
+  .item {
+    max-width: 400px;
+    height: 40rem;
+    padding: 0 15px;
+    object-fit: cover;
+  }
+  
+  .item:last-of-type {
+    padding-left: 0;
+  }
+  .itemInner{
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    height: 40rem;
+  }
+  .inner {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    height: 10rem;
+  }
+  
+  .wrapper {
+    position: absolute;
+    display: flex;
+  }
+  
+  section {
+    display: flex;
+    animation: swipe var(--speed) linear infinite backwards;
+  }
+  
+  @keyframes swipe {
+    0% {
+      transform: translate(0);
+    }
+  
+    100% {
+      transform: translate(-100%);
+    }
+  }
+  

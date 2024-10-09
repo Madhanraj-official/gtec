@@ -14,7 +14,7 @@
     & > div {
       display: flex;
       margin: 10px;
-      background: #000;
+      /* background: #000; */
       & > .call {
         display: flex;
         flex-direction: column;

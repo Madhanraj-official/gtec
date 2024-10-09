@@ -32,9 +32,9 @@ function Header() {
             <img src={calling} alt="Call" />
           </a>
         </div>
-        <div className="enquiry_btn">
+        <div className="enquiry_btn" >
           <Popup
-            trigger={<button className="Enquiry_btn">QUICK ENQUIRY</button>}
+            trigger={<button className="Enquiry_btn" style={{zIndex:"100"}}>QUICK ENQUIRY</button>}
             modal
             nested
           >
