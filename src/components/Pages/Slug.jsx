@@ -11,13 +11,14 @@ import { useMediaQuery } from 'react-responsive'
 function Slug() {
   const isTablet = useMediaQuery({ query: '(max-width:1354px)' })
   const isMobile = useMediaQuery({ query: '(max-width:841px)' })
+  const isMobileSmall = useMediaQuery({ query: '(max-width:500px)' })
   const { categoryId, courseId } = useParams()
   const slugData = courseDetails[keys[categoryId]][courseId]
   TitleHook(slugData["Title"])
   return (
     <>
       <Typography textAlign={"center"} component={"p"} variant={isTablet?"h3":'h1'}>{slugData["Title"]}</Typography>
-      <Box display={"flex"} justifyContent={"center"} alignItems={"center"} margin={"2rem"}><Avatar src={slugData["Image"]} variant={"rounded"} sx={{ width: isMobile?"25rem" :isTablet? "40rem":"50rem", height: isMobile?"10rem" :isTablet? "25rem":"30rem" }} /></Box>
+      <Box display={"flex"} justifyContent={"center"} alignItems={"center"} margin={"2rem"}><Avatar src={slugData["Image"]} variant={"rounded"} sx={{ width: isMobileSmall ? "20rem": isMobile?"25rem" :isTablet? "40rem":"50rem", height: isMobile?"10rem" :isTablet? "25rem":"30rem" }} /></Box>
       <Box width={"100vw"} display={"flex"} justifyContent={"center"} alignItems={"center"}><Typography margin={"2rem"} sx={{ width: "80vw" }} textAlign={"justify"} component={"p"} variant='h5'>{slugData["cardContent"]}</Typography></Box>
       <Box display={"flex"} justifyContent={"center"} alignItems={"center"} margin={"2rem"}>
         <Popup

@@ -36,7 +36,7 @@ export default function NavBar() {
         {[{ "name": "Home", "link": "/" },
         { "name": "About Us", "link": "/about" },
         { "name": "Courses", "link": "/course" },
-        { "name": "Affiliations", "link": "/affiliation" },
+        { "name": "Affiliations", "link": "/affilication" },
         { "name": "Testimonials", "link": "/testimonial" },
         { "name": "Placement", "link": "/placement" },
         { "name": "Contact", "link": "/contact" },

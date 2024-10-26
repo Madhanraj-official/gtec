@@ -15,6 +15,7 @@ import { ReactGoogleReviews } from "react-google-reviews";
 import { Box } from '@mui/material'
 import {GoogleReviewToken} from "/public/Course"
 import "react-google-reviews/dist/index.css";
+import Error404 from './components/Pages/Error404'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path='/testimonial' element={<Testimonial />} />
           <Route path='/placement' element={<Placement />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/*' element={<Error404/>} />
 
         </Routes>
         <Box component={"center"} >

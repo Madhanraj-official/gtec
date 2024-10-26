@@ -7,8 +7,12 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 import { ArrowForward } from '@mui/icons-material';
+import { useMediaQuery } from 'react-responsive'
 
-export default function CourseCard({ image, title, cardContent, onClick,viewMore=true, minWidth = 400, maxWidth = 500, height = 240 ,width="100%"}) {
+export default function CourseCard({ image, title, cardContent, onClick,viewMore=true, minWidth = 400, maxWidth =  500, height = 240 ,width="100%"}) {
+  
+  const isTablet = useMediaQuery({ query: '(max-width: 500px)' })
+  maxWidth = isTablet ? 300 : maxWidth
   return (
     <Link to={onClick}>
       <Card sx={{width, maxWidth, minWidth, maxHeight: 600, minHeight: 600, margin: "20px" }} >

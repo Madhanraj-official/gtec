@@ -1,10 +1,11 @@
 import { Box, Typography ,TextField,Button} from '@mui/material'
-import {useState} from 'react'
 import SendIcon from '@mui/icons-material/Send';
 import { TitleHook } from '../TitleHook'
 import {useForm,Controller} from "react-hook-form"
 import { useMediaQuery } from 'react-responsive'
 import {CenterArea} from "/public/Course"
+import emailjs from "emailjs-com";
+import {userId, EmailServiceId, FormTemplateForPlacementForm } from '/public/Course'
 
 function Placement() {
   TitleHook("Placement")
@@ -15,8 +16,12 @@ function Placement() {
   } = useForm();
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
-  }; 
-
+    emailjs.send(
+        EmailServiceId,    
+        FormTemplateForPlacementForm,  
+        data,
+        userId)
+};
   const listStyle = {
     fontSize: "1.5rem",
     fontWeight: "bold",
@@ -43,7 +48,7 @@ function Placement() {
           <Typography variant='h4' component={"p"} margin={"2rem"}>Secure your future with the right job—register now and take the first step towards your professional success!</Typography>
         </Box>
         <Box component="form" alignItems={"center"} justifyContent={"center"} display={"flex"} flexDirection={"column"} width={"100vw"} onSubmit={handleSubmit(onSubmit)}>
-          <Controller name='Name' control={control} defaultValue="" rules={{required:"Name is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Name*" variant="outlined" error={!!errors.Name} helperText={errors.Name ?errors.Name.message : ""} />)}/>
+          <Controller name='Name' control={control} defaultValue="" rules={{required:"Name is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle}  label="Name*" variant="outlined" {...field} error={!!errors.Name} helperText={errors.Name ?errors.Name.message : ""} />)}/>
           <Controller name='Email' control={control} defaultValue="" rules={{required:"Email is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Email*" variant="outlined" error={!!errors.Email} helperText={errors.Email ?errors.Email.message : ""} />)}/>
           <Controller name='Phone' control={control} defaultValue="" rules={{required:"Phone is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Phone*" variant="outlined" error={!!errors.Phone} helperText={errors.Phone ?errors.Phone.message : ""} />)}/>
           <Controller name='Position' control={control} defaultValue="" rules={{required:"Apply For The Position  is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Apply For The Position *" variant="outlined" error={!!errors.Position} helperText={errors.Position ?errors.Position.message : ""} />)}/>
@@ -52,12 +57,7 @@ function Placement() {
           <Controller name='Workplace2' control={control} defaultValue="" rules={{required:"Interest in Workplace 2 is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Interest in Workplace 2*" variant="outlined" error={!!errors.Workplace2} helperText={errors.Workplace2 ?errors.Workplace2.message : ""} />)}/>
           <Controller name='Cover' control={control} defaultValue="" rules={{required:"Cover Letter is required"}} render={({field})=>(<TextField id="outlined-basic" sx={textfieldStyle} {...field} label="Cover Letter*" variant="outlined" error={!!errors.Cover} helperText={errors.Cover ?errors.Cover.message : ""} />)}/>
           <Button variant={"contained"} sx={{width:isMobile?"25vw":"20vw",height:"10vh",paddingX:"20px",fontSize: isMobile?"0.8rem" : isTablet?"1.5rem":"2rem" ,margin:"3rem"}} className=""  type='submit' endIcon={<SendIcon/>}>Submit</Button>
-
-          
-
-
         </Box>
-
       </Box>
     </>
   )
