@@ -1,55 +1,55 @@
-import React from "react";
 import gtec from "./Images/gtec.png";
 import Nav from "./Nav";
 import call from "./Images/call.svg";
-import map from './Images/map.svg'
+import MapIcon from '@mui/icons-material/Map';
+import { ReactGoogleReviews } from "react-google-reviews";
+import { Box } from "@mui/material";
+import CallIcon from '@mui/icons-material/Call';import {mainNumber,subNumber,address} from "/public/Course"
 function Address() {
   return (
-    <div className="left">
-      <div>
+    <Box className="left">
+      <Box>
         <a href="" className="logo">
           <img src={gtec} alt="G-TEC LOGO" />
         </a>
-        <div className="address">
-            <img src={map} alt="map" />
-          <address>
-            Nazeem Complex
-            <br />
-            near to Bus Stand
-            <br />
-            Gandhi Nagar
-            <br />
-            Koranad
-            <br />
-            Mayiladuthurai
-            <br />
-            Tamil Nadu 609001
-          </address>
-        </div>
+        
+        <Box className="address">
+          <MapIcon sx={{color:"#009dec",width:"3rem",height:"3rem",paddingRight:"10px"}}/>
+          <Box component={"address"} width={"10rem"}>
+            {address}
+          </Box>
+        </Box>
 
-        <div>
-          <img src={call} alt="call" />
-          <div className="call">
-            <a className="phno" href="tel:9788884850">
-              9788884850
+        <Box>
+          <CallIcon sx={{color:"#009dec",width:"3rem",height:"3rem"}}/>
+          <Box className="call">
+            <a className="phno" href={`tel:${mainNumber}`}>
+              {mainNumber}
             </a>
-            <a className="phno" href="tel:8056338566">
-              8056338566
+            <a className="phno" href={`tel:${subNumber}`}>
+              {subNumber}
             </a>
-          </div>
-        </div>
-        <div className="soical">
+          </Box>
+        </Box>
+        {/* <Box className="soical">
           <a href="#">fb</a>
           <a href="#">in</a>
           <a href="#">yt</a>
           <a href="#">g</a>
-        </div>
-      </div>
-      <div className="mainlink">
+        </Box> */}
+      </Box>
+      <Box className="mainlink">
         <h3>Main Links</h3>
         <Nav />
-      </div>
-    </div>
+      </Box>
+      <Box className={"Google-Review"}>
+        <ReactGoogleReviews
+          layout={"badge"}
+          featurableId="a6937548-a640-49ff-9ffd-bcbf3ee74fc1"
+        />
+        <img src="/public/Location review-pana.png" alt="" />
+      </Box>
+    </Box>
   );
 }
 

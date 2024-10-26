@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { TitleHook } from '../TitleHook'
 function Affilication() {
   return (
-    <div>Affilication</div>
+    <div>Affilication ashdvahsv</div>
   )
 }
 

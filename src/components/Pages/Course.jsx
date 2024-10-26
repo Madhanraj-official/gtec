@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CourseList from '../CourseList'
-
-function Course() {
+import { TitleHook } from '../TitleHook'
+ function Course() {
+  TitleHook("Courses")
   return (
     <>
     <CourseList />
+    
     </>
   )
 }

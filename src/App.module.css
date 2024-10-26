@@ -11,7 +11,7 @@
   }
   .item {
     max-width: 400px;
-    height: 40rem;
+    height: 50rem;
     padding: 0 15px;
     object-fit: cover;
   }
@@ -20,20 +20,17 @@
     padding-left: 0;
   }
   .itemInner{
-    position: relative;
     width: 100vw;
     overflow: hidden;
-    height: 40rem;
+    height: 70rem;
   }
   .inner {
-    position: relative;
     width: 100vw;
     overflow: hidden;
     height: 10rem;
   }
   
   .wrapper {
-    position: absolute;
     display: flex;
   }
   

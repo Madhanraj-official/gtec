@@ -1,7 +1,7 @@
 .left {
   background: rgb(29, 29, 29);
   display: flex;
-  width: 50%;
+  /* width: 50%; */
   & > div {
     display: flex;
     flex-direction: column;
@@ -13,11 +13,12 @@
     }
     & > div {
       display: flex;
-      margin: 10px;
-      /* background: #000; */
+      margin: .5rem;
       & > .call {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin-left: 10px;
         & > img {
             width: 30px;
@@ -43,6 +44,19 @@
         color: #fff;
         margin: 2px;
       }
+    }
+  }
+  & > .Google-Review{
+    width: 50vw;
+    justify-content: flex-end;
+    align-items: center;
+    display: none;
+    flex-direction: row;
+    margin-left: 3rem;
+
+    & > img{
+      height: 20vw;
+      display: none;
     }
   }
 }

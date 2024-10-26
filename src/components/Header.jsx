@@ -1,53 +1,61 @@
 import React from "react";
-import "../Css/Header.css";
+import style from "../Css/Header.module.css";
 import gtec from "./Images/gtec.png";
 import Popup from "reactjs-popup";
 import Enquiry from "./Pages/Enquiry";
-import call from "./Images/call.svg";
 import calling from "./Images/calling.svg";
 import whatsapp from "./Images/whatsapp.svg";
 import Nav from "./Nav";
-
+import NavBar from "./NavBar";
+import { Box, Typography } from "@mui/material";
+import { useMediaQuery } from 'react-responsive'
+import {mainNumber,headerContent} from "/public/Course"
+import CallIcon from '@mui/icons-material/Call';
+import { NavLink } from "react-router-dom";
 function Header() {
-  return (
-    <header className="Hearder">
-      <a href="" className="logo">
-        <img src={gtec} alt="G-TEC LOGO" />
-      </a>
-      <div className="container">
-        <Nav />
 
-        <a className="phno" href="tel:9788884850">
-          <img src={call} alt="call" />
-          9788884850
-        </a>
-      </div>
-      <h1>The Education You Want The Attention You Deserve</h1>
-      <div className="">
-        <div className="countact">
-          <a href="https://wa.me/9788884850" className="whatsapp">
-            <img src={whatsapp} alt="Whatsapp" />
-          </a>
-          <a href="tel:9788884850" className="call">
-            <img src={calling} alt="Call" />
-          </a>
-        </div>
-        <div className="enquiry_btn" >
+    const isTablet = useMediaQuery({ query: '(max-width: 1354px)' })
+    const isMobile = useMediaQuery({query:'(max-width:409px)'})
+  return (
+    <Box component={"header"} className={style.Hearder}>
+      <NavLink to={"/"}>
+        <Box component={"img"} src={gtec} alt="G-TEC LOGO" />
+      </NavLink>
+      <Box component={"div"} className={style.container}>
+      {isTablet?<NavBar/>:<Nav />} 
+      { isTablet?<></>:<Typography component={"a"} className="phno" color="black" href={`tel:${mainNumber}`} display={"inline-flex"} justifyContent={"center"} >
+          <CallIcon sx={{paddingRight:"5px"}}/>
+          <Typography component={"span"} display={"inline-block"} height={"1rem"} fontWeight={"bold"}>
+            {mainNumber}
+          </Typography>
+          
+        </Typography>}
+      </Box>
+      <Typography variant="h3" component={"p"} className={isMobile?style.p2:isTablet?style.p1:style.p}>{headerContent}</Typography >
+      <Box component={"div"} className="">
+        <Box component={"div"} className="countact">
+          <Typography component={"a"} href={`https://wa.me/+91${mainNumber}`} className={style.whatsapp}>
+            <Box component={"img"} src={whatsapp} alt="Whatsapp" />
+          </Typography>
+          <Typography component={"a"} href={`tel:${mainNumber}`} className={style.call}>
+            <Box component={"img"} src={calling} alt="Call" />
+          </Typography>
+        </Box>
+        <Box component={"div"} className={style.enquiry_btn} >
           <Popup
-            trigger={<button className="Enquiry_btn" style={{zIndex:"100"}}>QUICK ENQUIRY</button>}
+            trigger={<button className={style.Enquiry_btn} style={{zIndex:"100"}}>QUICK ENQUIRY</button>}
             modal
             nested
           >
             {(close) => (
-              <div className="modal">
-               
+              <Box component={"div"} className="modal">
                 <Enquiry />
-              </div>
+              </Box>
             )}
           </Popup>
-        </div>
-      </div>
-    </header>
+        </Box>
+      </Box>
+    </Box>
   );
 }
 

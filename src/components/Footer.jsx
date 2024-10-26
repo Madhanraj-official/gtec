@@ -2,14 +2,13 @@ import React from "react";
 import "../Css/Footer.css";
 
 import Address from "./Address";
+import { Box, Typography } from "@mui/material";
 function Footer() {
   return (
-    <footer>
+    <Box component={"footer"}>
       <Address />
-
-
-      <h3>copyright&copy;GTec Mayiladuthurai. All Rights Reserved</h3>
-    </footer>
+      <Typography component={"p"} variant="h6">copyright&copy;Madhanraj official. All Rights Reserved</Typography>
+    </Box >
   );
 }
 

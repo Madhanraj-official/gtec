@@ -5,4 +5,46 @@
   border: 0;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
+  scrollbar-width: none!important;
 }
+a:visited{
+  color: blue;
+}
+.test{
+    color: #dfcaca00;
+
+}
+body{
+
+}
+.slick-dots{display: none !important;background:#fff}
+.css-2xmatf{width: 100vw!important;min-width: 70vw!important;}
+.slick-track{overflow: hidden !important;}
+.css-1uyvnff{overflow: hidden !important; padding: 5%;}
+@media only screen and (max-width: 1387px) {
+  .css-1o9sf1l{
+    width: 20rem!important;
+    overflow:  hidden !important;
+  }
+  .css-1en7e4i,.css-hzpebr{
+    display: none !important;
+    overflow:  hidden !important;
+  }
+  .css-2xmatf{width: 100vw!important;min-width: 50vw!important;
+    overflow: hidden !important;
+  }
+}
+@media only screen and (max-width: 954px) {
+  .css-1o9sf1l{
+    width: 15rem!important;
+    overflow:  hidden !important;
+  }
+  .css-1en7e4i,.css-hzpebr{
+    display: none !important;
+    overflow:  hidden !important;
+  }
+  .css-2xmatf{width: 100vw!important;min-width: 50vw!important;
+    overflow: hidden !important;
+  }
+}
+

@@ -6,28 +6,32 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import {  ArrowForward } from '@mui/icons-material';
+import { ArrowForward } from '@mui/icons-material';
 
-export default function CourseCard({image,title,cardContent,maxWidth=500,height=240}) {
+export default function CourseCard({ image, title, cardContent, onClick,viewMore=true, minWidth = 400, maxWidth = 500, height = 240 ,width="100%"}) {
   return (
-    <Card sx={{ maxWidth,minWidth:400,maxHeight:400,minHeight:500,margin:"20px" }}>
-      <CardMedia
-        sx={{ height }}
-        image={image}
-        title={title}
-        
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-         {cardContent}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link to='/course' ><Button size="small" endIcon={<ArrowForward/>}>View More</Button></Link>
-      </CardActions>
-    </Card>
+    <Link to={onClick}>
+      <Card sx={{width, maxWidth, minWidth, maxHeight: 600, minHeight: 600, margin: "20px" }} >
+        <CardMedia
+          component={"img"}
+          sx={{ height ,objectFit:"fill"}}
+          image={image}
+          title={title}
+
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {title}
+          </Typography>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            {cardContent}
+          </Typography>
+        </CardContent>
+
+        {viewMore?<CardActions>
+          <Button size="small" endIcon={<ArrowForward />}>View More</Button>
+        </CardActions>:""}
+      </Card>
+    </Link>
   );
 }
