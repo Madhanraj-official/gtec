@@ -22,13 +22,13 @@ function Slug() {
       <Box width={"100vw"} display={"flex"} justifyContent={"center"} alignItems={"center"}><Typography margin={"2rem"} sx={{ width: "80vw" }} textAlign={"justify"} component={"p"} variant='h5'>{slugData["cardContent"]}</Typography></Box>
       <Box display={"flex"} justifyContent={"center"} alignItems={"center"} margin={"2rem"}>
         <Popup
-          trigger={<Button variant={"contained"} sx={{ width: "20vw", height: "10vh", fontSize: isMobile?"1rem" : isTablet?"1.5rem":"2rem" }} className="" style={{ zIndex: "100" }}>Apply Now</Button>}
+          trigger={<Button variant={"contained"} sx={{ width: "20vw", height: "10vh", fontSize: isMobile?"1rem" : isTablet?"1.5rem":"2rem" }} className="" style={{ zIndex: "100" }} >Apply Now</Button>}
           modal
           nested
         >
           {(close) => (
             <Box className="modal">
-              <Apply courseName={slugData["Title"]} />
+              <Apply close={close} courseName={slugData["Title"]} />
             </Box>
           )}
         </Popup>

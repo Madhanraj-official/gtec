@@ -1,5 +1,8 @@
+import { Hardware } from "@mui/icons-material"
+
+// content for Course detail 
 const courseDetails = {
-  Programming: [{
+  SOFTWARE: [{
     Title: "Java SE (Standard Edition)",
     Image: "https://t3.ftcdn.net/jpg/02/01/05/22/240_F_201052212_M2wpoRcv9qpysoPtHB8ruwnRekrVkHEx.jpg",
     cardContent: "The Java SE (Standard Edition) course is designed to provide a solid foundation in the Java programming language, enabling students to build robust, platform-independent applications. This course covers the core Java concepts, libraries, and tools essential for developing stand-alone applications, preparing learners for advanced programming in enterprise environments and other Java frameworks."
@@ -55,33 +58,141 @@ const courseDetails = {
     cardContent: "The Django course offers an in-depth exploration of Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. Ideal for beginners and experienced developers alike, this course equips learners with the skills needed to build powerful, secure, and scalable web applications efficiently."
   }
   ],
-  Accounts: [
+  ACCOUNTING: [
     {
-      Title: "Ac",
-      Image: "https://t3.ftcdn.net/jpg/07/49/20/64/240_F_749206438_zj2hemjtPNz6g9PR9Tq9xWTI4aDphed2.jpg",
-      cardContent: "The Django course offers an in-depth exploration of Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design. Ideal for beginners and experienced developers alike, this course equips learners with the skills needed to build powerful, secure, and scalable web applications efficiently."
+      Title: "Tally Prime",
+      Image: "",
+      cardContent: "The Tally Prime Course equips participants with essential skills to manage accounting, taxation, and payroll efficiently using Tally Prime, one of the most popular accounting software tools. This course covers all aspects of financial management, from bookkeeping to generating reports, making it ideal for students, accountants, and business owners. With hands-on practice, learners will gain the expertise to streamline business operations, manage GST compliance, and produce financial reports accurately."
     },
     {
-      Title: "tally",
-      Image: "https://t4.ftcdn.net/jpg/04/19/05/01/240_F_419050146_DDOOZ8FRtjx0KLt4Sekxk1W0YaNgkIbo.jpg",
-      cardContent: "The Dart course provides a solid foundation in Dart, the programming language developed by Google. Dart is known for being the primary language behind Flutter, a popular framework for building cross-platform mobile, web, and desktop applications. This course will teach learners the syntax, concepts, and advanced features of Dart, preparing them for both Flutter development and other standalone applications using Dart."
+      Title: "Sage 50",
+      Image: "",
+      cardContent: "The Sage 50 Course provides participants with comprehensive knowledge of Sage 50 Accounting Software, a leading solution for small and medium-sized enterprises (SMEs). This course equips learners with the essential skills required to manage finances, inventory, payroll, and tax compliance efficiently. With hands-on training, students will gain expertise in bookkeeping, financial reporting, and business analysis, helping businesses streamline operations and make informed financial decisions."
+    },
+    {
+      Title: "QuickBooks",
+      Image: "",
+      cardContent: "The QuickBooks Course is designed to provide participants with practical knowledge of QuickBooks, one of the most popular accounting software solutions for small and medium-sized businesses (SMBs). This course equips learners with the skills to manage day-to-day financial operations, including bookkeeping, invoicing, payroll, and tax filing. With hands-on training, participants will gain expertise in organizing finances, tracking income and expenses, and generating insightful reports, making it ideal for aspiring accountants, business owners, and finance professionals."
+    },
+    {
+      Title: "DIFA",
+      Image: "",
+      cardContent: "The Diploma in Financial Accounting (DIFA) course is designed to equip participants with a solid foundation in accounting principles, practices, and financial reporting. This course covers essential topics in financial accounting, preparing students for a successful career in finance, accounting, or business management. Through practical exercises and real-world applications, learners will develop the skills needed to manage financial records, prepare financial statements, and understand accounting regulations."
+    },
+    {
+      Title: "Professional Diploma in Financial Accounting (PDIFA) ",
+      Image: "",
+      cardContent: "The Professional Diploma in Financial Accounting (PDIFA) is an advanced course designed to provide participants with in-depth knowledge and practical skills in financial accounting. This course focuses on key concepts, principles, and practices necessary for effective financial management and reporting in various business environments. Ideal for finance professionals seeking to enhance their career prospects, the PDIFA combines theoretical understanding with practical applications, enabling students to excel in accounting roles."
+    },
+    {
+      Title: "SAP MM",
+      Image: "",
+      cardContent: "The SAP MM (Material Management) course is designed to provide participants with a comprehensive understanding of the material management module within SAP ERP. This course covers the processes involved in procurement, inventory management, and logistics, equipping learners with the skills needed to effectively manage materials and optimize supply chain operations. Ideal for professionals in logistics, supply chain management, and procurement, this course focuses on both theoretical concepts and practical applications within the SAP MM environment."
+    },
+    {
+      Title: "SAP SD",
+      Image: "",
+      cardContent: "The SAP SD (Sales and Distribution) course provides participants with a comprehensive understanding of the sales and distribution processes within the SAP ERP system. This course covers the entire sales lifecycle, from order management to delivery and billing, equipping learners with the skills needed to effectively manage sales processes and customer relationships. Ideal for professionals in sales, logistics, and supply chain management, the SAP SD course emphasizes both theoretical knowledge and practical applications."
+    },
+    {
+      Title: "SAP PP",
+      Image: "",
+      cardContent: "The SAP PP (Production Planning) course is designed to provide participants with a comprehensive understanding of the production planning and control processes within the SAP ERP system. This course covers key topics related to planning, scheduling, and managing production operations effectively. Ideal for professionals in manufacturing, operations, and supply chain management, the SAP PP course emphasizes both theoretical concepts and practical applications to optimize production processes."
+    },
+    {
+      Title: "SAP FICD",
+      Image: "",
+      cardContent: "The SAP FICD (Financial Accounting and Controlling) course is designed to provide participants with a comprehensive understanding of the integrated financial management capabilities within the SAP ERP system. This course covers essential components of financial accounting (FI) and controlling (CO), equipping learners with the skills needed to manage financial transactions, reporting, and internal controls effectively. Ideal for finance professionals, accountants, and SAP consultants, this course emphasizes both theoretical concepts and practical applications."
+    },
+    {
+      Title: "CCNA",
+      Image: "",
+      cardContent: "The CCNA (Cisco Certified Network Associate) course is designed to provide participants with foundational knowledge and skills in networking, enabling them to effectively configure, manage, and troubleshoot networks. This course covers a wide range of topics, including network fundamentals, IP addressing, routing and switching, and security. Ideal for aspiring network professionals, IT support staff, and anyone looking to enhance their networking skills, the CCNA course combines theoretical concepts with hands-on practical experience."
+    },
+  ],
+  "CADD CIRCLE": [
+    {
+      Title: "AUTOCAD 2D",
+      Image: "",
+      cardContent: "The AutoCAD 2D course is designed to equip students and professionals with the skills to create precise technical drawings using AutoCAD, one of the world\u2019s leading design software tools."
+    },
+    {
+      Title: "AutoCAD 3D Course",
+      Image: "",
+      cardContent: "The AutoCAD 3D course is designed to provide participants with advanced skills in 3D modeling and visualization using AutoCAD software. This course enables students to create precise 3D designs, making it ideal for professionals in architecture, engineering, product design, and construction. Through practical exercises and real-world projects, learners will gain expertise in transforming 2D drawings into complex 3D models for presentation and analysis."
+    },
+    {
+      Title: "REVIT(CADD CIRCLE)",
+      Image: "",
+      cardContent: "The Revit Certification Course is designed to provide students and professionals with expertise in Building Information Modeling (BIM), using Autodesk Revit. This course focuses on creating intelligent 3D models for architecture, structural engineering, and construction, enabling participants to design, visualize, and manage building projects efficiently. With a mix of theory and practical sessions, students will develop the skills needed to work on real-world projects and collaborate effectively across disciplines."
+    },
+    {
+      Title: "Primavera",
+      Image: "",
+      cardContent: "The Primavera P6 Course is designed to provide participants with in-depth knowledge of Oracle\u2019s Primavera P6 software, the industry standard for project management, planning, and scheduling. This course focuses on mastering essential project management concepts, including activity planning, resource management, scheduling, and risk analysis, making it ideal for professionals in construction, engineering, manufacturing, and IT sectors. With hands-on practice, participants will learn to create, manage, and control projects efficiently to meet deadlines and budgets."
+    },
+    {
+      Title: "Tekla Structures",
+      Image: "",
+      cardContent: "The Tekla Structures Course provides participants with comprehensive knowledge of Building Information Modeling (BIM) for structural design and detailing. Tekla Structures is an industry-leading software for designing and managing steel and concrete structures, offering powerful tools for creating accurate, constructible models. This course prepares learners to develop detailed 3D models, generate fabrication drawings, and collaborate across disciplines, making it ideal for engineers, architects, and construction professionals."
+    },
+    {
+      Title: "SOFTWARE TESTING(SOFTWARE)",
+      Image: "",
+      cardContent: "This course provides a comprehensive introduction to [Software Name \/ Technology], designed to equip participants with the skills needed to use and apply it effectively in real-world scenarios. Whether you are a beginner or someone with prior experience, this course will help you build a solid foundation and develop practical expertise."
     }
+  ],
+  "NETWORKING AND HARDWARE": [
+    {
+      Title: "A+",
+      Image: "",
+      cardContent: "The CompTIA A+ certification is widely recognized as an essential starting point for anyone pursuing a career in IT. This course covers a broad range of technical skills, including networking fundamentals, hardware troubleshooting, operating system support, security protocols, and cloud computing. The program emphasizes practical problem-solving and hands-on experience to prepare students for roles such as IT support specialists, help desk technicians, and junior system administrators."
+    },
+    {
+      Title: "  N+ ",
+      Image: "",
+      cardContent: "The Cisco Certified Network Associate (CCNA) certification is an entry-level networking credential designed to validate fundamental networking knowledge and skills. As of August 2024, Cisco introduced updates under CCNA version 1.1, aligning the certification with current industry trends such as AI, cloud technologies, and network automation."
+    },
+    {
+      Title: "ETHICAL HACKING ",
+      Image: "",
+      cardContent: "An Ethical Hacking course is designed to teach students the methods used by hackers to exploit vulnerabilities in networks and systems, but with the goal of securing them. Below is a detailed overview of what you can expect from such courses:"
+    },
+
+    {
+      Title: "LINUX ",
+      Image: "",
+      cardContent: "A Linux course typically focuses on helping learners understand the fundamentals of the Linux operating system, from basic navigation to more advanced administration skills. The course covers both command-line and graphical interfaces, allowing students to interact with different Linux distributions."
+    },
+    {
+      Title: "RED HAT ",
+      Image: "",
+      cardContent: "Red Hat courses are crafted to build deep expertise in Linux system administration and open-source technologies. Core offerings cover essential skills like system configuration, network management, and security practices. Advanced modules dive into automation using Ansible, containerization with Podman and Kubernetes, and cloud infrastructure management. Hands-on labs and real-world scenarios ensure participants can apply their skills effectively. Red Hat certifications, widely recognized in the industry, validate expertise and open up career opportunities in IT administration and development."
+    },
+    {
+      Title: "CERTIFIED ETHICAL HACKING ",
+      Image: "",
+      cardContent: "The Certified Ethical Hacking (CEH) course trains participants to think like hackers to improve security. Key topics include hacking fundamentals, intelligence gathering, network and system vulnerabilities, malware analysis, web application threats, wireless security, cryptography, and securing cloud and IoT environments, offering a comprehensive approach to modern cybersecurity."
+    }
+
   ]
 
 }
 
-
+//content for Home page image slide
 const homeDisplayImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBGSrpkzspU3HChRWdKRWMrGd6g9po90HWl3cfBL2DAKghkG9deZvH_ysHvMMfkAKcX1k&usqp=CAU",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHoE_LXbqxrTSmD4tuGP8vr-tJpqbkIH50vQ&s",
   "https://www.trodly.com/pictures/attraction/x3341.jpg.pagespeed.ic.QoqV_wqpAV.jpg",
   "https://th-i.thgim.com/public/incoming/g96bi9/article68417939.ece/alternates/FREE_1200/NPBVR_16-2-2012_19-1-2_MAYILADUTHURAIRAILWAYSTATION06.JPG"
 ]
+
+//content for Offer
 const DetailForOffer = [
   "/public/bg.jpg",
   "/public/bg.jpg"
 ]
-
+//content for affilication
 const affilication = [
   { name: "The COUNCIL for PRIVATE EDUCATION", img: "https://media.licdn.com/dms/image/v2/C560BAQHRihwY29NT4w/company-logo_200_200/company-logo_200_200/0/1632466237483/council_for_private_education_logo?e=2147483647&v=beta&t=oUi5b0q0tM-q4-8fPD8-MTGPouP2DBhwv33rue9S5Gs", content: "G-TEC is registered with The COUNCIL for PRIVATE EDUCATION (Govt: of Singapore) (CPE)", },
   { name: "HRDF Malaysia", img: "https://blog.bcm-institute.org/hubfs/HRD%20Corp%20Logo/HRD%20Corp%20Logo%2002.png", content: "G-TEC is approved by HRDF Malaysia (Human Resources Development Fund)", },
@@ -117,8 +228,22 @@ const affilication = [
   { name: "PRIST University", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmko5IyL9hDSIRyNOQhwRi_kLQICHvg2-FsAh45_nbftn2WpT3jfOJhccjAjAtor7Hzcc&usqp=CAU", content: "G-TEC provides University certificates for 14 courses in Software, Hardware and multimedia in UG and PG in a Collaborative Program with PRIST University, Tamil Nadu", },
   { name: "IT and ICT industry", img: "", content: "Several Certifications from the renowned organizations from U.K and U.S.A makes our crown more beautiful which is more useful in the IT and ICT industry", },
 ]
+// content for testimonial
+const testimonial = [
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test1 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test2 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test3 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test4 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test1 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test2 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test3 Video" },
+  { Url: "https://player.vimeo.com/video/1023645268?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479", Title: "Test4 Video" },
+]
+
 const CenterArea = "Mayiladuthrai"
-const DirectorName = "Ramay"
+const DirectorName = "Ramya"
 const DirectorSlogan = "\"We provide a quality education with result oriented approach. In G-TEC we emphasize on practical approach to bring out the best.We are fully equipped with technology to train our students to compete in ever changing competitive world.\" "
 const mainNumber = "9788884850"
 const subNumber = "8056338566"
@@ -136,11 +261,13 @@ for (var s of datas1) {
     datas = [...datas, j]
   }
 }
-const userId = "f332NCoLpyLPVl4V7"
-const EmailServiceId = "service_k6y1jzi"
-const FormTemplateForApplicatonForm = ""
-const FormTemplateForEnquiryForm = ""
-const FormTemplateForPlacementForm = "template_ztc38bt"
+const userId = "wqho-LxL2pFDmpI3G"
+const EmailServiceId = "service_wa803fn"
+const FormTemplateForApplicatonForm = "template_1n1seis"
+const FormTemplateForEnquiryForm = "template_1n1seis"
+const FormTemplateForPlacementForm = "template_b7o68k9"
 
 
-export { courseDetails, datas, keys, show, homeDisplayImages, DetailForOffer, affilication, DirectorName, DirectorSlogan, mainNumber, subNumber, headerContent, CenterArea, MapLink, GoogleReviewToken, mailId, address, userId, EmailServiceId, FormTemplateForApplicatonForm, FormTemplateForEnquiryForm, FormTemplateForPlacementForm }
+const AboutUsContent = "GTEC Computer Education in Mayiladuthurai is dedicated to empowering students with high-quality, career-oriented IT education. We offer a broad range of courses in areas like computer science, software development, networking, cybersecurity, and digital skills tailored to meet industry standards. Our experienced instructors provide hands-on training to ensure students gain practical expertise and confidence. At GTEC Mayiladuthurai, we believe in creating an inclusive, supportive environment where students can grow and achieve their career goals in the rapidly advancing tech world. Join us to build a strong foundation for a successful future in technology!"
+
+export { courseDetails, datas, keys, show, homeDisplayImages, DetailForOffer, affilication, DirectorName, DirectorSlogan, mainNumber, subNumber, headerContent, CenterArea, MapLink, GoogleReviewToken, mailId, address, userId, EmailServiceId, FormTemplateForApplicatonForm, FormTemplateForEnquiryForm, FormTemplateForPlacementForm, testimonial ,AboutUsContent}

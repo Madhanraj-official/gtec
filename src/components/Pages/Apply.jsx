@@ -1,35 +1,35 @@
 import React from "react";
 import "../../Css/Enquiry.css";
-import InputLabel from "@mui/material/InputLabel"
-import Select from "@mui/material/Select"
-import MenuItem from "@mui/material/MenuItem"
 import Box from "@mui/material/Box"
 import FormControl from '@mui/material/FormControl';
 import TextField from "@mui/material/TextField";
 import { useMediaQuery } from 'react-responsive'
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import CallIcon from '@mui/icons-material/Call';
 import ApplicationIcon from "../Images/application.png";
 import { useForm, Controller } from "react-hook-form"
-import {userId, EmailServiceId, FormTemplateForApplicatonForm } from '/public/Course'
+import { userId, EmailServiceId, FormTemplateForApplicatonForm } from '/public/Course'
+import emailjs from "emailjs-com";
 
-function Application() {
-    const [Course, setCourse] = React.useState('');
-    const handleChange = (event) => {
-        setCourse(event.target.value);
-    };
+function Application({ courseName, close }) {
+    const Course = courseName
     const {
         handleSubmit,
         control,
         formState: { errors }
     } = useForm();
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data));
-        emailjs.send(
-            EmailServiceId,    
-            FormTemplateForApplicatonForm,   
+
+    const reloadPage = () => {
+        window.location.reload();
+    };
+    const onSubmit = async (data) => {
+        await (data['Mode'] = "Application Form")
+        await emailjs.send(
+            EmailServiceId,
+            FormTemplateForApplicatonForm,
             data,
             userId)
+        await reloadPage()
     };
     const isTablet = useMediaQuery({ query: '(max-width:841px)' })
     const isMobilemid = useMediaQuery({ query: '(max-width:616px)' })
@@ -37,16 +37,6 @@ function Application() {
     const textfield = {
         width: "70%",
         margin: "10px",
-    }
-    const submit = (e) => {
-        const formData = document.querySelector("enquirefom")
-        e.preventdefault()
-        const formDataModel = FormData(formData)
-        console.log(formDataModel)
-        fetch(
-            "https://script.google.com/macros/s/AKfycbxmrTwouedlqilGm-7oUGf22pQVyBW-_SViP45ZCuNGeRVHV68sZ8DugScQSdC1jmSk4g/exec",
-            { method: "POST", body: formDataModel }
-        )
     }
     return (
         <>
@@ -72,52 +62,13 @@ function Application() {
                         <Controller name='Email' control={control} defaultValue="" rules={{ required: "Email is required" }} render={({ field }) => (<TextField name="Email" sx={textfield} label="Email" variant="standard"  {...field} error={!!errors.Email} helperText={errors.Email ? errors.Email.message : ""} />)} />
                         <Controller name='Contact' control={control} defaultValue="" rules={{ required: "Contact is required" }} render={({ field }) => (<TextField name="Contact" sx={textfield} label="Contact Number*" variant="standard"  {...field} error={!!errors.Contact} helperText={errors.Contact ? errors.Contact.message : ""} />)} />
                         <Box component={"div"} sx={textfield} >
-                            <Controller name='Course' control={control} defaultValue="" rules={{ required: "Course is required" }} render={({ field }) => (<FormControl fullWidth>
-                                <InputLabel id="Course-label">Course</InputLabel>
-                                <Select
-                                    labelId="Course-label"
-                                    id="Course"
-                                    value={Course}
-                                    label="Course"
-                                    name="Course"
-                                    onChange={handleChange}
-                                    x={textfield}
-                                    {...field} error={!!errors.Course} helperText={errors.Course ? errors.Course.message : ""}
-                                >
-                                    <MenuItem value={"Accounting"}>Accounting</MenuItem>
-                                    <MenuItem value={"SAP"}>SAP</MenuItem>
-                                    <MenuItem value={"graphics &amp; web"}>
-                                        Graphics &amp; Web Designing
-                                    </MenuItem>
-                                    <MenuItem value={"Multimedia &amp; animation"}>
-                                        Multimedia &amp; Animation
-                                    </MenuItem>
-                                    <MenuItem value={"Interior &amp; Designing"}>
-                                        Interior Designing
-                                    </MenuItem>
-                                    <MenuItem value={"CAD &amp; CAM"}>CAD &amp; CAM </MenuItem>
-                                    <MenuItem value={"digital marketing"}>Digital Marketing</MenuItem>
-                                    <MenuItem value={"Mobile Phone Technology"}>
-                                        Mobile Phone Technology
-                                    </MenuItem>
-                                    <MenuItem value={"chip level &amp; cctv"}>Chip level / CCTV</MenuItem>
-                                    <MenuItem value={"Software"} disabled={""}>
-                                        Software
-                                    </MenuItem>
-                                    <MenuItem value={"data science"} disabled={""}>
-                                        Data science
-                                    </MenuItem>
-                                    <MenuItem value={"Hardware"}>Hardware</MenuItem>
-                                    <MenuItem value={"Networking"}>Networking</MenuItem>
-                                    <MenuItem value={"Networking"}>Ethical Hacking</MenuItem>
-                                    <MenuItem value={"English Training"}>English Training</MenuItem>
-                                    <MenuItem value={"Other"}>Other</MenuItem>
-                                </Select>
-                            </FormControl>)} />
+                            <Controller name='Course' control={control} defaultValue={Course} rules={{ required: "Course is required" }} render={({ field }) => (
+                                <TextField name="Course" sx={textfield} label="Course" variant="standard" value={Course} disabled  {...field} error={!!errors.Course} helperText={errors.Course ? errors.Course.message : ""} />)}
+                            />
                         </Box>
-                        <Controller name='Comment' control={control} defaultValue="" render={({ field }) => (<TextField name="Comment" sx={textfield}  label="Comments" variant="standard"  {...field} error={!!errors.Comment} helperText={errors.Comment ? errors.Comment.message : ""} />)} />
+                        <Controller name='Comment' control={control} defaultValue="" render={({ field }) => (<TextField name="Comment" sx={textfield} label="Comments" variant="standard"   {...field} error={!!errors.Comment} helperText={errors.Comment ? errors.Comment.message : ""} />)} />
                         <Box component={"div"} className="button-wrap">
-                            <input type="submit" className="send-btn" value="Send Message" />{" "}
+                            <Button type="submit" className="send-btn" >Send Message</Button>
                         </Box>
                         <Box component={"div"} id="errors"></Box>
                         <Box component={"div"} id="successmsg_qk"></Box>

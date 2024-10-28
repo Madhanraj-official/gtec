@@ -11,7 +11,8 @@ import { Typography } from "@mui/material";
 import CallIcon from '@mui/icons-material/Call';
 import ApplicationIcon from "../Images/application.png";
 import { useForm, Controller } from "react-hook-form"
-import {userId, EmailServiceId, FormTemplateForPlacementForm } from '/public/Course'
+import { userId, EmailServiceId, FormTemplateForEnquiryForm } from '/public/Course'
+import emailjs from "emailjs-com";
 
 function Application() {
     const [Course, setCourse] = React.useState('');
@@ -23,13 +24,17 @@ function Application() {
         control,
         formState: { errors }
     } = useForm();
-    const onSubmit = (data) => {
-        alert(JSON.stringify(data));
-        emailjs.send(
-            EmailServiceId,    
-            FormTemplateForPlacementForm,    
+    const reloadPage = () => {
+        window.location.reload();
+    };
+    const onSubmit = async (data) => {
+        await (data['Mode'] = "Application Form")
+        await emailjs.send(
+            EmailServiceId,
+            FormTemplateForEnquiryForm,
             data,
             userId)
+        await reloadPage()
     };
     const isTablet = useMediaQuery({ query: '(max-width:841px)' })
     const isMobilemid = useMediaQuery({ query: '(max-width:616px)' })
@@ -37,16 +42,6 @@ function Application() {
     const textfield = {
         width: "70%",
         margin: "10px",
-    }
-    const submit = (e) => {
-        const formData = document.querySelector("enquirefom")
-        e.preventdefault()
-        const formDataModel = FormData(formData)
-        console.log(formDataModel)
-        fetch(
-            "https://script.google.com/macros/s/AKfycbxmrTwouedlqilGm-7oUGf22pQVyBW-_SViP45ZCuNGeRVHV68sZ8DugScQSdC1jmSk4g/exec",
-            { method: "POST", body: formDataModel }
-        )
     }
     return (
         <>
@@ -68,11 +63,11 @@ function Application() {
                 </Box>
                 <Box component={"form"} onSubmit={handleSubmit(onSubmit)} className="enquirefom">
                     <Box component={"div"} className="rightwrap">
-                        <Controller name='Name' control={control} defaultValue="" rules={{ required: "Name is required" }} render={({ field }) => (<TextField name="Name" size="large" sx={textfield} id="Name" label="Name*" variant="standard"  {...field} error={!!errors.Name} helperText={errors.Name ? errors.Name.message : ""} />)} />
-                        <Controller name='Email' control={control} defaultValue="" rules={{ required: "Email is required" }} render={({ field }) => (<TextField name="Email" sx={textfield} id="email" label="Email" variant="standard"  {...field} error={!!errors.Email} helperText={errors.Email ? errors.Email.message : ""} />)} />
-                        <Controller name='Contact' control={control} defaultValue="" rules={{ required: "Contact is required" }} render={({ field }) => (<TextField name="Contact" sx={textfield} id="phone" label="Contact Number*" variant="standard"  {...field} error={!!errors.Contact} helperText={errors.Contact ? errors.Contact.message : ""} />)} />
+                        <Controller name='Name' control={control} defaultValue="" rules={{ required: "Name is required" }} render={({ field }) => (<TextField name="Name" size="large" sx={textfield} label="Name*" variant="standard"  {...field} error={!!errors.Name} helperText={errors.Name ? errors.Name.message : ""} />)} />
+                        <Controller name='Email' control={control} defaultValue="" rules={{ required: "Email is required" }} render={({ field }) => (<TextField name="Email" sx={textfield} label="Email" variant="standard"  {...field} error={!!errors.Email} helperText={errors.Email ? errors.Email.message : ""} />)} />
+                        <Controller name='Contact' control={control} defaultValue="" rules={{ required: "Contact is required" }} render={({ field }) => (<TextField name="Contact" sx={textfield} label="Contact Number*" variant="standard"  {...field} error={!!errors.Contact} helperText={errors.Contact ? errors.Contact.message : ""} />)} />
                         <Box component={"div"} sx={textfield} >
-                            <Controller name='Course' control={control} defaultValue="" rules={{ required: "Name is required" }} render={({ field }) => (<FormControl fullWidth>
+                            <Controller name='Course' control={control} defaultValue="" rules={{ required: "Course is required" }} render={({ field }) => (<FormControl fullWidth>
                                 <InputLabel id="Course-label">Course</InputLabel>
                                 <Select
                                     labelId="Course-label"
@@ -115,7 +110,7 @@ function Application() {
                                 </Select>
                             </FormControl>)} />
                         </Box>
-                        <Controller name='Comment' control={control} defaultValue="" rules={{ required: "Comment is required" }} render={({ field }) => (<TextField name="Comment" sx={textfield} id="msg" label="Comments" variant="standard"  {...field} error={!!errors.Comment} helperText={errors.Comment ? errors.Comment.message : ""} />)} />
+                        <Controller name='Comment' control={control} defaultValue="" render={({ field }) => (<TextField name="Comment" sx={textfield} label="Comments" variant="standard"  {...field} error={!!errors.Comment} helperText={errors.Comment ? errors.Comment.message : ""} />)} />
                         <Box component={"div"} className="button-wrap">
                             <input type="submit" className="send-btn" value="Send Message" />{" "}
                         </Box>
